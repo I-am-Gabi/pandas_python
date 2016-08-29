@@ -55,7 +55,7 @@ def filtering(zika_data):
     brazil_frame = brazil_frame[brazil_frame.state_city != 'Brazil']
     # print brazil_frame.state_city.value_counts()
 
-    # Keeping microcephaly_confirmed and microcephaly_fatal_confirmed
+    # Keeping microcephaly confirmed and microcephaly fatal_confirmed
     mask_conf = (brazil_frame['data_field'] == "microcephaly_confirmed") | (
     brazil_frame['data_field'] == "microcephaly_fatal_confirmed")
     brazil_frame = brazil_frame[mask_conf]
