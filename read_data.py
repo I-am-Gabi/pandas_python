@@ -1,5 +1,11 @@
-import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
+"""
+Source: https://www.kaggle.com/majacaci00/d/cdc/zika-virus-epidemic/zika-and-microcephaly-cases-in-brazil/notebook
+        http://synesthesiam.com/posts/an-introduction-to-pandas.html
+        https://www.kaggle.com/cdc/zika-virus-epidemic/kernels
+"""
 
+import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
+import matplotlib.pyplot as plt
 
 def initialize(file_name):
     return pd.read_csv(file_name, low_memory=False)
@@ -53,7 +59,7 @@ def filtering(zika_data):
     # Cleaning the state city column
     brazil_frame.state_city = brazil_frame.state_city.map(lambda x: x.replace('_', ' '))
     brazil_frame = brazil_frame[brazil_frame.state_city != 'Brazil']
-    # print brazil_frame.state_city.value_counts()
+    print brazil_frame.state_city.value_counts()
 
     # Keeping microcephaly confirmed and microcephaly fatal_confirmed
     mask_conf = (brazil_frame['data_field'] == "microcephaly_confirmed") | (
