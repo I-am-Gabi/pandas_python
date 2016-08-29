@@ -5,7 +5,7 @@ Source: https://www.kaggle.com/majacaci00/d/cdc/zika-virus-epidemic/zika-and-mic
 """
 
 import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
-import matplotlib.pyplot as plt
+
 
 def initialize(file_name):
     return pd.read_csv(file_name, low_memory=False)
@@ -38,9 +38,9 @@ def filtering(zika_data):
     # filter
     mask_brazil = zika_data['country'] == "Brazil"
     # This is a pandas Series object, which is the one-dimensional equivalent of a DataFrame.
-    # print type(mask_brazil)
+    print type(mask_brazil)
     # the filter is nothing more than a Series with a boolean value for every item in the index.
-    # print mask_brazil
+    print mask_brazil
     # pandas lines up the rows of the DataFrame and the filter using the index
     # and then keeps the rows with a True filter value.
     brazil_frame = zika_data[mask_brazil]
@@ -63,7 +63,7 @@ def filtering(zika_data):
 
     # Keeping microcephaly confirmed and microcephaly fatal_confirmed
     mask_conf = (brazil_frame['data_field'] == "microcephaly_confirmed") | (
-    brazil_frame['data_field'] == "microcephaly_fatal_confirmed")
+        brazil_frame['data_field'] == "microcephaly_fatal_confirmed")
     brazil_frame = brazil_frame[mask_conf]
     print (brazil_frame.data_field.value_counts())
     print ("++++++++++++++")
