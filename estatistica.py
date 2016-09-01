@@ -44,6 +44,7 @@ print cities['Brasilia']
 print
 print cities[['Brasilia', 'Salvador', 'Recife']]
 print
+
 #ou ate boolean indexing para selecao
 print cities[cities < 1000]
 print

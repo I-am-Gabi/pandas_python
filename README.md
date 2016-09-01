@@ -20,3 +20,7 @@ Por exemplo:
 
     $ python simple_analysis.py
    
+
+Referências:
+
+https://gabrielacavalcante.gitbooks.io/python/content/
