@@ -4,10 +4,14 @@
 var_int = 5
 var_str = 'python class'
 var_bool = var_int > 10
+var_not = var_int is not 10
+var_or = var_int > 10 or var_int < 10
+var_and = var_int > 10 and var_int != 10
 
 print var_int, type(var_int)
 print var_str, type(var_str)
 print var_bool, type(var_bool)
+print var_not, type(var_bool)
 
 #### IF
 age = int(input("Qual sua idade: "))
