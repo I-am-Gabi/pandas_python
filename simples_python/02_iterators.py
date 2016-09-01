@@ -14,4 +14,6 @@ for i in range(0, 10):
 for num in range(0, 20, 2):
     print (num)
 
-# TODO: while
+
+while a:
+    print a.pop()
