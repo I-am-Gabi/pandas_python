@@ -9,8 +9,9 @@ print(check_output(["ls", "data/cdc_zika.csv"]).decode("utf8"))
 df = pd.read_csv("data/cdc_zika.csv", parse_dates=['report_date'], infer_datetime_format=True, index_col=0, low_memory=False)
 print df.head(3)
 
-df.location.value_counts()[:30].plot(kind='bar', figsize=(12, 7))
-plt.title("Number of locations reported - Top 30")
+df[df.location == "Brazil-Pernambuco"].value.astype(int).plot()
+df[df.location == "Brazil-Bahia"].value.astype(int).plot().legend(("Pernambuco","Bahia"),loc="best")
+plt.title("cases Pernambuco x Bahia")
 plt.show()
 
 df[df.data_field == "confirmed_male"].value.astype(int).plot()
